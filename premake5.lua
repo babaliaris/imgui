@@ -1,6 +1,8 @@
 project "DearImGUI"
+	staticruntime "on"
 	kind "StaticLib"
 	language "C++"
+	cppdialect "C++17"
 	targetdir "%{_WORKING_DIR}/builds/%{cfg.shortname}/"
 	objdir "%{_WORKING_DIR}/obj/%{prj.name}_%{cfg.shortname}/"
 
@@ -21,12 +23,11 @@ project "DearImGUI"
 
 	filter "system:windows"
 		systemversion "latest"
-		cppdialect "C++17"
+		
 
 	filter "system:linux"
 		pic "On"
 		systemversion "latest"
-		cppdialect "C++17"
 
 	filter "configurations:Debug"
 		runtime "Debug"
